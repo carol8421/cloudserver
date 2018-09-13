@@ -37,10 +37,10 @@ request parameter set to `true`.
 
 The GET Bucket v1 and v2 responses are largely the same, with only a few changes.
 The `NextMarker` v1 parameter has been replaced by the
-`NextContinuationToken`. The `NextContinuationToken` is only included if
-the response is truncated. Its value is an obfuscated string that can be passed
-at the `continuation-token` in the next request, which will be interpreted by
-CloudServer.
+`NextContinuationToken`. The `NextContinuationToken` is included with any
+truncated response, even if no delimiter is sent in the request. Its value is an
+obfuscated string that can be passed at the `continuation-token` in the next
+request, which will be interpreted by CloudServer.
 The `KeyCounter` parameter is returned in every response. Its value is the
 number of keys included in the response. It is always less than or equal to
 the `MaxKeys` value.
